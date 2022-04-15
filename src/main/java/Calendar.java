@@ -8,7 +8,7 @@ public class Calendar {
         try{
             List<String> slots = new ArrayList<String>();
 
-            FileReader fr = new FileReader("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.txt");
+            FileReader fr = new FileReader("calendar.txt");
             BufferedReader br = new BufferedReader(fr);
 
             String wordsLine = br.readLine();
@@ -69,7 +69,7 @@ public class Calendar {
                 }
     
                 // rewrite the calendar.txt
-                FileWriter fw = new FileWriter("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.txt");
+                FileWriter fw = new FileWriter("calendar.txt");
                 BufferedWriter bw = new BufferedWriter(fw);
     
                 //bw.write();

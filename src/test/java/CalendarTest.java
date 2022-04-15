@@ -12,11 +12,11 @@ class CalendarTest {
             try {
 
 
-                File file = new File("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.txt");
+                File file = new File("calendar.txt");
 
                 Scanner scan = new Scanner(file);
 
-                OutputStream htmlfile = new FileOutputStream(new File("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.html"));
+                OutputStream htmlfile = new FileOutputStream(new File("calendar.html"));
                 PrintStream printhtml = new PrintStream(htmlfile);
 
 
