@@ -12,11 +12,11 @@ class CalendarTest {
             try {
 
 
-                File file = new File("Calendar.txt");
+                File file = new File("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.txt");
 
                 Scanner scan = new Scanner(file);
 
-                OutputStream htmlfile = new FileOutputStream(new File("Calendar.html"));
+                OutputStream htmlfile = new FileOutputStream(new File("c:\\Users\\rahul\\Final-Project-java\\target\\calendar.html"));
                 PrintStream printhtml = new PrintStream(htmlfile);
 
 
@@ -63,7 +63,7 @@ class CalendarTest {
 
 
             System.out.println("Updated Calendar is available at below url");
-            System.out.println("https://htmlpreview.github.io/?https://github.com/RohitNarayanaJanapareddy/Final-Project-java/blob/main/target/Calendar.html");
+            System.out.println("https://htmlpreview.github.io/?https://github.com/RohitNarayanaJanapareddy/Final-Project-java/blob/main/target/calendar.html");
 
         }
 
