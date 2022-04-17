@@ -25,6 +25,10 @@ public class Calendar {
 
             for(int i=0; i<slots.size(); i++){
                 String[] slotData = slots.get(i).split(", ");
+                // for(int j=0; j<slotData.length; j++){
+                //     System.out.print("[" + slotData[j] + "]");
+                // }
+                // System.out.println("");
                 finalSlots.add(slotData);
             }
 
@@ -45,7 +49,7 @@ public class Calendar {
             }else{
                 for(int i=0; i<finalSlots.size(); i++){
                     System.out.print(i+1 + ") ");
-                    for(int j=0; j<finalSlots.get(i).length-1; j++){
+                    for(int j=0; j<finalSlots.get(i).length-2; j++){
                         System.out.print(finalSlots.get(i)[j] + "  ");
                     }
                     System.out.println("");
@@ -57,11 +61,21 @@ public class Calendar {
     
                 if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println("This slot is already booked");  
                 else if(finalSlots.get(slotNumber-1)[3].equals("status='OPEN'")) {
-                    System.out.println("reaching the required condition");
-                    finalSlots.get(slotNumber-1)[3] = "status='CLOSED'";
-                    finalSlots.get(slotNumber-1)[4] = "bookedBy='" + username + "'";
+                    int count = Integer.parseInt(finalSlots.get(slotNumber-1)[4].substring(finalSlots.get(slotNumber-1)[4].lastIndexOf("=") + 1));
+                    if(count == 1){
+                        System.out.println("reaching the required condition");
+                        finalSlots.get(slotNumber-1)[3] = "status='CLOSED'";
+                        finalSlots.get(slotNumber-1)[5] = "bookedBy='" + username + "," + finalSlots.get(slotNumber-1)[5].substring(finalSlots.get(slotNumber-1)[5].lastIndexOf("=") + 2);
+                        count--;
+                        finalSlots.get(slotNumber-1)[4] = "slots=" + count;
+                    }else{
+                        finalSlots.get(slotNumber-1)[5] = "bookedBy='" + username + "," + finalSlots.get(slotNumber-1)[5].substring(finalSlots.get(slotNumber-1)[5].lastIndexOf("=") + 2);
+                        count--;
+                        finalSlots.get(slotNumber-1)[4] = "slots=" + count;
+                    }
+                    
     
-                    for(int i=0; i<finalSlots.get(slotNumber-1).length; i++){
+                    for(int i=0; i<finalSlots.get(slotNumber-1).length-2; i++){
                         System.out.print(finalSlots.get(slotNumber-1)[i] + "  ");
                     }
                     System.out.println("");
