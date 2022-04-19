@@ -12,7 +12,7 @@ class CalendarTest {
             try {
 
 
-                File file = new File("calendar.txt");
+                File file = new File("calendars.txt");
 
                 Scanner scan = new Scanner(file);
 

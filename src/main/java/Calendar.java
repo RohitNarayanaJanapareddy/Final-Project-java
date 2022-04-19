@@ -18,7 +18,7 @@ public class Calendar {
             }
             br.close();
 
-            
+
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter your Username to view Professor Frank's Calendar: ");
             String username = sc.next();
@@ -54,12 +54,12 @@ public class Calendar {
                     }
                     System.out.println("");
                 }
-                
+
                 System.out.println("Enter the slot number to book: ");
                 int slotNumber = Integer.parseInt(sc.next());
                 sc.close();
-    
-                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println("This slot is already booked");  
+
+                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println("This slot is already booked");
                 else if(finalSlots.get(slotNumber-1)[3].equals("status='OPEN'")) {
                     int count = Integer.parseInt(finalSlots.get(slotNumber-1)[4].substring(finalSlots.get(slotNumber-1)[4].lastIndexOf("=") + 1));
                     if(count == 1){
@@ -73,36 +73,47 @@ public class Calendar {
                         count--;
                         finalSlots.get(slotNumber-1)[4] = "slots=" + count;
                     }
-                    
-    
+
+
                     for(int i=0; i<finalSlots.get(slotNumber-1).length-2; i++){
                         System.out.print(finalSlots.get(slotNumber-1)[i] + "  ");
                     }
                     System.out.println("");
                     System.out.println("Required Slot has been booked by " + username);
                 }
-    
-                // rewrite the calendar.txt
-                FileWriter fw = new FileWriter("calendar.txt");
-                BufferedWriter bw = new BufferedWriter(fw);
-    
+
+                // rewrite the calendar.txt for reuse
+                FileWriter fw1 = new FileWriter("calendar.txt");
+                BufferedWriter bw1 = new BufferedWriter(fw1);
+
                 //bw.write();
-    
+
                 for(int i=0; i<finalSlots.size(); i++){
                     for(int j=0; j<finalSlots.get(i).length; j++){
-                        bw.write(finalSlots.get(i)[j] + ", ");
+                        bw1.write(finalSlots.get(i)[j] + ", ");
                     }
-                    bw.newLine();
+                    bw1.newLine();
                 }
-                bw.close();
+                bw1.close();
+
+                // rewrite the calendar.txt for student's display
+
+                FileWriter fw2 = new FileWriter("calendars.txt");
+                BufferedWriter bw2 = new BufferedWriter(fw2);
+
+                for(int i=0; i<finalSlots.size(); i++){
+                    for(int j=0; j<finalSlots.get(i).length-2; j++){
+                        bw2.write(finalSlots.get(i)[j] + ", ");
+                    }
+                    bw2.newLine();
+                }
+                bw2.close();
+
             }
 
-            
+
         }catch(IOException e){
             e.printStackTrace();
         }
     }
 }
-
-
-
