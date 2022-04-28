@@ -73,7 +73,7 @@ public class Calendar {
                 int slotNumber = Integer.parseInt(sc.next());
                 sc.close();
 
-                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println("This slot is already booked");  // if the status of the slot is closed, user should be unable to book the slot and this message should be shown to the user
+                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println(" No more slot are available for the given day");  // if the status of the slot is closed, user should be unable to book the slot and this message should be shown to the user
                 else if(finalSlots.get(slotNumber-1)[3].equals("status='OPEN'")) {
                     int count = Integer.parseInt(finalSlots.get(slotNumber-1)[4].substring(finalSlots.get(slotNumber-1)[4].lastIndexOf("=") + 1));
                     if(count == 1){
