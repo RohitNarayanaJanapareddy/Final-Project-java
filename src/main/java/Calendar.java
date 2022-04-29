@@ -8,7 +8,7 @@ public class Calendar {
         try{
             List<String> slots = new ArrayList<String>();
 
-            FileReader fr = new FileReader("calendar.txt"); // To read the calendar.txt file
+            FileReader fr = new FileReader("c:\\Users\\rahul\\Final-Project-java\\src\\main\\java\\calendar.txt"); // To read the calendar.txt file
             BufferedReader br = new BufferedReader(fr);  // to read the .txt file in proper format
 
             String wordsLine = br.readLine();

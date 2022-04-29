@@ -3,11 +3,12 @@ import java.io.File;
     import java.io.OutputStream;
     import java.io.PrintStream;
     import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 class CalendarTest {
 
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws InterruptedException {
 
             try {
 
@@ -59,11 +60,6 @@ class CalendarTest {
 
             } catch (Exception e) {
             }
-
-
-
-            System.out.println("Updated Calendar is available at below url");
-            System.out.println("https://htmlpreview.github.io/?https://github.com/RohitNarayanaJanapareddy/Final-Project-java/blob/main/target/calendar.html");
 
         }
 
