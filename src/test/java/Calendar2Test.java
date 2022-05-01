@@ -10,7 +10,7 @@ class Calendar2Test {
             TimeUnit.SECONDS.sleep(45);
 
             System.out.println("Updated Calendar is available at below url");
-            System.out.println("https://htmlpreview.github.io/?https://github.com/RohitNarayanaJanapareddy/Final-Project-java/blob/main/target/calendar.html");
+            System.out.println("https://htmlpreview.github.io/?https://github.com/RohitNarayanaJanapareddy/Final-Project-java/blob/main/calendar.html");
 
     }
 
