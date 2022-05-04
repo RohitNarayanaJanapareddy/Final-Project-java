@@ -2,16 +2,17 @@
 
 This repository is for Appointment-Calendar java project
 
-Folder structure for project is as below. 
+Summary:
 
-Team has deveoped 2 methods to generate and test calendar functionality. We are going to finalize  1st method which is 
-easier to implement all required features but as additional work we are also testing what are other ways for calendar so we have kept both for now.
+1.Calendar.java is main class which generates calendar.txt and calendars.txt. 
+  calendar.txt gets updated everytime student makes an update. It contains booked by field for 
+  professor view. Other file calendars.txt is used for student's view. It does not contain booked by field.
 
-1st Method: Calendar.java -> This file contain our code using try and catch method and ability to select slots
+2. Maven test case CalendarTest converts calendars.txt into calendar.html .
+3. Another test Calendar2Test is used to manually transfer calendar.html to network.
+4. Calendar3Test is used for automated push to git to display calendar but this code
+   is not working correctly.
+5. We implemented feature of hiding code for professor but IDE doesnot support that console read password 
+   feature so if Professor wants to view then he can run on terminal as java Calendar.java.
+6. We are further trying to improve Calendar html look. 
 
-2nd Method: Calendar1.java-> 
-This is little complex work using inheritance It contains super class and sub-class calendar2.java and generates 2 files A.txt for professor and B.txt for students.
-src/main/java - will contain all source code classes src/main/test - will contain some test cases For 2nd method we added test cases to read txt file and generate in html format for calendar.
-target/ - will hold generated calendars and text files. 
-
-Currently this is work in progress.
