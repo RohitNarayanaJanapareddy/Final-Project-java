@@ -31,7 +31,7 @@ public class Calendar {
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args)  {
         try {
             String enteredPassword;
 
