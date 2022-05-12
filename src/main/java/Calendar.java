@@ -116,7 +116,7 @@ public class Calendar {
                 BufferedWriter bw2 = new BufferedWriter(fw2);
 
                 for(int i=0; i<finalSlots.size(); i++){
-                    for(int j=0; j<finalSlots.get(i).length-1; j++){
+                    for(int j=0; j<finalSlots.get(i).length-2; j++){
                         bw2.write(finalSlots.get(i)[j] + ", ");
                     }
                     bw2.newLine();
