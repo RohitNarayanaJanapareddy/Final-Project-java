@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class Calendar {
-    private static List<String []> finalSlots = new ArrayList<String []>();
+    private static List<String []> finalSlots = new ArrayList<>();
 
     public static void readFile() throws IOException {
         try{
-            List<String> slots = new ArrayList<String>();
+            List<String> slots = new ArrayList<>();
 
             FileReader fr = new FileReader("calendar.txt"); // To read the calendar.txt file
             BufferedReader br = new BufferedReader(fr);  // to read the .txt file in proper format
@@ -73,12 +73,14 @@ public class Calendar {
                 int slotNumber = Integer.parseInt(sc.next());
                 sc.close();
 
-                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println(" No more slot are available for the given day");  // if the status of the slot is closed, user should be unable to book the slot and this message should be shown to the user
+                // if the status of the slot is closed, user should be unable to book the slot and this message should be shown to the user
+                if(finalSlots.get(slotNumber-1)[3].equals("status='CLOSED'")) System.out.println(" No more slot are available for the given day");
                 else if(finalSlots.get(slotNumber-1)[3].equals("status='OPEN'")) {
                     int count = Integer.parseInt(finalSlots.get(slotNumber-1)[4].substring(finalSlots.get(slotNumber-1)[4].lastIndexOf("=") + 1));
                     if(count == 1){
                         System.out.println("reaching the required condition");
-                        finalSlots.get(slotNumber-1)[3] = "status='CLOSED'";  // if the count is 1 the status should turn to closed as this is the last slot
+                        // if the count is 1 the status should turn to closed as this is the last slot
+                        finalSlots.get(slotNumber-1)[3] = "status='CLOSED'";
                         finalSlots.get(slotNumber-1)[5] = "bookedBy='" + username + "," + finalSlots.get(slotNumber-1)[5].substring(finalSlots.get(slotNumber-1)[5].lastIndexOf("=") + 2);
                         count--;
                         finalSlots.get(slotNumber-1)[4] = "slots=" + count;

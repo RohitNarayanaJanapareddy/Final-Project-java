@@ -10,6 +10,9 @@ class CalendarTest {
 
         try {
 
+            //File file = new File("c://Users//rahul//Final-Project-java//src//main/java//calendars.txt");
+            //Please put full path of file calendars.txt before running this as above e.g
+
             File file = new File("calendars.txt");
 
             Scanner scan = new Scanner(file);
