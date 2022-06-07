@@ -20,10 +20,7 @@ public class Calendar {
 
             for(int i=0; i<slots.size(); i++){
                 String[] slotData = slots.get(i).split(", ");
-//                 for(int j=0; j<slotData.length; j++){
-//                     System.out.print("[" + slotData[j] + "]");
-//                 }
-//                 System.out.println("");
+
                 finalSlots.add(slotData);
             }
         }catch(IOException e){
@@ -58,7 +55,7 @@ public class Calendar {
                         System.out.println("");
                     }
                 }else{
-                    System.out.println("passcode is incorrect");
+                    System.out.println("passcode  you entered is incorrect");
                 }
             }else{
                 for(int i=0; i<finalSlots.size(); i++){  // if username is not frank  does not show the booked my column
